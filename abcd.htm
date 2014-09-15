@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <title>JS Bin</title>
+    <script type="text/javascript" language="javascript">
+
+        function Test() {
+            alert(window.location.href);
+
+            var parser = document.createElement('a');
+            parser.href = "http://localhost:55362/admin/brands.aspx";
+            //parser.href = "http://example.com:3000/pathname/?search=test#hash";
+
+            var str = '';
+            str = 'Protocol :' + parser.protocol;  // => "http:"
+            str = str + '<br>' + 'HostName :' + parser.hostname;  // => "example.com"
+            str = str + '<br>' + 'Port :' + parser.port;      // => "3000"
+            str = str + '<br>' + 'PathName :' + parser.pathname; // => "/pathname/"
+            str = str + '<br>' + 'Search :' + parser.search;   // => "?search=test"
+            str = str + '<br>' + 'Hash :' + parser.hash;     // => "#hash"
+            str = str + '<br>' + 'Host :' + parser.host;     // => "example.com:3000"
+
+            var BaseUrl = parser.protocol + "//" + parser.host;
+            document.write(str);
+
+            document.write('<br><br><br>');
+            document.write('Base URL :' + BaseUrl);
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Test" onclick="Test()" />
+    <div id="divop">
+    
+    </div>
+</body>
+</html>
